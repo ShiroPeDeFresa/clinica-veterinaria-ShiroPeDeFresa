@@ -18,4 +18,6 @@ public interface ServiceDueno {
 	Mascota findMascotaById(Mascota mascotaChange);
 	
 	Dueno findDuenoById(Dueno duenoChange);
+	
+	void eliminarDueno(Dueno duenoDel);
 }

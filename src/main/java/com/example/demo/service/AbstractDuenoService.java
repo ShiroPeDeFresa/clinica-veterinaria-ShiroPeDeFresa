@@ -58,4 +58,9 @@ public abstract class AbstractDuenoService implements ServiceDueno {
 		
 		return repository.findDuenoById(duenoChange);
 	}
+	
+	@Override
+	public void eliminarDueno(Dueno duenoDel) {
+		repository.eliminarDueno(duenoDel);
+	}
 }

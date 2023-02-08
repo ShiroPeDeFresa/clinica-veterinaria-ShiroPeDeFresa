@@ -19,4 +19,5 @@ public interface RepositoryDueno {
 	
 	Dueno findDuenoById(Dueno duenoChange);
 
+	void eliminarDueno(Dueno duenoDel);
 }

@@ -56,6 +56,7 @@ public class ListRepositoryDueno implements RepositoryDueno{
 	
 	@Override
 	public Dueno findDuenoById(Dueno duenoChange) {
+		System.out.println("estoy en el repositorio");
 	    for (Dueno dueno : list) {
 	        if (dueno.nombre.equals(duenoChange.nombre)) {
 	        	dueno.dni = duenoChange.dni;
@@ -64,11 +65,10 @@ public class ListRepositoryDueno implements RepositoryDueno{
 	    		
 	    		int numChip = Integer.parseInt(parts[0]);
 	    		String nombre = parts[1];
-	    		boolean vacunado = false;
-	    		if(parts[2] == "true") {
-	    			vacunado = true;
-	    		}
-	    		Mascota mascotaFinal = new Mascota(numChip, nombre, vacunado);
+	    		boolean vacunado = parts[2].equals("true") ? true : false;
+	    		String raza = parts[3];
+	    		
+	    		Mascota mascotaFinal = new Mascota(numChip, nombre, vacunado, raza);
 	    		dueno.mascota =  mascotaFinal;
 	    		
 	        }
@@ -76,5 +76,16 @@ public class ListRepositoryDueno implements RepositoryDueno{
 	    }
 	    
 	    return duenoChange;
+	}
+
+	@Override
+	public void eliminarDueno(Dueno duenoDel) {
+		for (Dueno s : list) {
+			if(s.nombre.equals(duenoDel.nombre)){
+				
+				System.out.println(s.nombre + s.dni);
+				list.remove(duenoDel);
+			}
+		}
 	}
 }

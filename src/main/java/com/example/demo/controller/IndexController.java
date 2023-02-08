@@ -95,9 +95,15 @@ public class IndexController {
 	@PostMapping("editarDuenos")
 	public ModelAndView EditDueno(@ModelAttribute("dueno") Dueno dueno) {
 		ModelAndView modelAndView = new ModelAndView("duenoEdit");
-		System.out.println(dueno.toString());
 		Dueno duenoCambiado = serviceDueno.findDuenoById(dueno);
 		modelAndView.addObject("dueno", duenoCambiado);
+		return modelAndView;
+	}
+	
+	@PostMapping("eliminarDuenos")
+	public ModelAndView DeleteDueno(@ModelAttribute("dueno") Dueno dueno) {
+		ModelAndView modelAndView = new ModelAndView("index");
+		serviceDueno.eliminarDueno(dueno);
 		return modelAndView;
 	}
 	
