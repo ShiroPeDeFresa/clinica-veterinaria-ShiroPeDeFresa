@@ -45,12 +45,10 @@ public class IndexController {
 		
 		int numChip = Integer.parseInt(parts[0]);
 		String nombre = parts[1];
-		boolean vacunado = false;
-		if(parts[2] == "true") {
-			vacunado = true;
-		}
+		boolean vacunado = parts[2].equals("true") ? true : false;
+		String raza = parts[3];
 		
-		Mascota mascotaFinal = new Mascota(numChip, nombre, vacunado);
+		Mascota mascotaFinal = new Mascota(numChip, nombre, vacunado, raza);
 		Dueno dueno = new Dueno(duenoConString.dni, duenoConString.nombre, mascotaFinal);
 		serviceDueno.guardarDueno(dueno);
 		l.info(dueno.toString());

@@ -5,7 +5,18 @@ public class Mascota {
 	public int numChip;
 	public String  nombre;
 	public boolean vacunado;
+	public String raza;
 	
+	
+	
+	public Mascota(int numChip, String nombre, boolean vacunado, String raza) {
+		super();
+		this.numChip = numChip;
+		this.nombre = nombre;
+		this.vacunado = vacunado;
+		this.raza = raza;
+	}
+
 	public Mascota() {
 		super();
 	}
@@ -37,7 +48,7 @@ public class Mascota {
 	
 	@Override
 	public String toString() {
-		return numChip + "|" + nombre + "|" + vacunado;
+		return numChip + "|" + nombre + "|" + vacunado + "|" + raza;
 	}
 	
 	

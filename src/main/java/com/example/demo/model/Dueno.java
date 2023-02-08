@@ -6,8 +6,18 @@ public class Dueno {
 	public String dni;
 	public Mascota mascota;
 	public String mascotasDescompuesto;
-
+	public String socio;
 	
+	
+	
+	public Dueno(String nombre, String dni, Mascota mascota, String socio) {
+		super();
+		this.nombre = nombre;
+		this.dni = dni;
+		this.mascota = mascota;
+		this.socio = socio;
+	}
+
 	public Dueno() {
 		super();
 	}
@@ -56,7 +66,7 @@ public class Dueno {
 	
 	@Override
 	public String toString() {
-		return "Dueno [nombre=" + nombre + ", dni=" + dni + "]";
+		return "Dueno [nombre=" + nombre + ", dni=" + dni + ", socio=" + socio + "Mascota=" + mascota.toString() + "]";
 	}
 	
 	
